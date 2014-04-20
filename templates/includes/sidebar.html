@@ -1,5 +1,5 @@
 {% if DISPLAY_TAGS_ON_SIDEBAR is not defined %}
-    {% set DISPLAY_TAGS_ON_SIDEBAR = True %}
+  {% set DISPLAY_TAGS_ON_SIDEBAR = True %}
 {% endif %}
 
 <aside>
@@ -69,6 +69,23 @@
             {% include 'includes/github.html' %}
             {% include 'includes/twitter_timeline.html' %}
             {% include 'includes/links.html' %}
+
+	    {% if GOOGLE_AD_CLIENT %}
+		<li class="adsense">
+		  <script type="text/javascript">
+		    <!--
+			google_ad_client = "{{ GOOGLE_AD_CLIENT }}";
+			google_ad_slot = "{{ GOOGLE_AD_SLOT }}";
+			google_ad_width = {{ GOOGLE_AD_WIDTH }};
+			google_ad_height = {{ GOOGLE_AD_HEIGHT }};
+			//-->
+
+		  </script>
+		  <script type="text/javascript"
+			  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		  </script>
+		</li>
+	    {% endif %}
 
         </ul>
     </section>
